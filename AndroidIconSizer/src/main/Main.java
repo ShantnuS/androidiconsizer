@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-import controller.Resizer;
+import view.ResizeFrame;
 
 public class Main {
 
@@ -33,7 +33,7 @@ public class Main {
 	}
 	
 	public static void main(String[] args){
-		Resizer resizer = new Resizer();
+		ResizeFrame resizer = new ResizeFrame();
 		resizer.init();
 		/*
 		BufferedImage image = null;
