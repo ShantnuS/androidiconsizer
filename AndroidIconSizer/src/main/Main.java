@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import controller.Resizer;
 import view.ResizeFrame;
 
 public class Main {
@@ -35,6 +36,7 @@ public class Main {
 	public static void main(String[] args){
 		ResizeFrame resizer = new ResizeFrame();
 		resizer.init();
+		
 		/*
 		BufferedImage image = null;
 		
@@ -45,14 +47,20 @@ public class Main {
 		    e.printStackTrace();
 		}
 		
-		//192px X 192px 
+		//192px X 192px NEW
+		BufferedImage image2 = Resizer.resizeImage(image, 192, 192);
+		
+		
+		//192px X 192px OLD
 		Image image192 = image.getScaledInstance(192, 192, Image.SCALE_SMOOTH);
 		BufferedImage img = Main.toBufferedImage(image192);
+		
+		
 		
 		try {
 		    // retrieve image
 		    File outputfile = new File("C:/Users/Shantnu/Desktop/image/ml_icon192.png");
-		    ImageIO.write(img, "png", outputfile);
+		    ImageIO.write(image2, "png", outputfile);
 		} 
 		catch (IOException e) {
 		    e.printStackTrace();

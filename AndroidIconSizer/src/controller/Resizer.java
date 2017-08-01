@@ -23,4 +23,11 @@ public class Resizer {
 		// Return the buffered image
 		return bimage;
 	}
+	
+	public static BufferedImage resizeImage(BufferedImage img, int newWidth, int newHeight){
+		Image newImage = img.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+		BufferedImage resizedImage = Resizer.toBufferedImage(newImage);
+		
+		return resizedImage;
+	}
 }
