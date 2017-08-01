@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+import controller.Resizer;
+
 public class Main {
 
 	
@@ -31,6 +33,9 @@ public class Main {
 	}
 	
 	public static void main(String[] args){
+		Resizer resizer = new Resizer();
+		resizer.init();
+		/*
 		BufferedImage image = null;
 		
 		try {
@@ -40,8 +45,9 @@ public class Main {
 		    e.printStackTrace();
 		}
 		
-		Image image2 = image.getScaledInstance(192, 192, Image.SCALE_SMOOTH);
-		BufferedImage img = Main.toBufferedImage(image2);
+		//192px X 192px 
+		Image image192 = image.getScaledInstance(192, 192, Image.SCALE_SMOOTH);
+		BufferedImage img = Main.toBufferedImage(image192);
 		
 		try {
 		    // retrieve image
@@ -51,6 +57,7 @@ public class Main {
 		catch (IOException e) {
 		    e.printStackTrace();
 		}
+		*/
 	}
 	
 }
