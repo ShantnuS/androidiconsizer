@@ -1,5 +1,4 @@
-
-
+import javax.swing.SwingUtilities;
 import ui.ResizeFrame;
 
 /*
@@ -12,11 +11,17 @@ import ui.ResizeFrame;
  * of having to do it manually. 
  */
 
+
 public class Main {
 	
 	public static void main(String[] args){
-		ResizeFrame resizer = new ResizeFrame();
-		resizer.init();
+		SwingUtilities.invokeLater(new Runnable(){
+    		@Override
+			public void run(){
+    			ResizeFrame resizer = new ResizeFrame();
+    			resizer.init();
+    		}
+    	});
 	}
 	
 }
